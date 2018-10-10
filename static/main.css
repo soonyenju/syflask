@@ -1,0 +1,52 @@
+h1 {color: indianred;
+    font-family: sans-serif;
+    font-size:48px;
+    text-align: center;
+    padding: 30px
+}
+p {color: rgb(7, 7, 7);
+    font-family: "sans serif";
+    font-size: 24px;
+    /* word-spacing: 5px; */
+    line-height: 1.5em;
+    text-indent: 2em;
+    padding: 10px;
+}
+a {
+    color: brown;
+    text-align: left;
+    font-size: 24px;
+    padding: 50px;
+}
+.authorship {
+    color: maroon;
+    font-size: 24px;
+}
+.authorship-background {
+    background-color: rgb(197, 197, 197);
+}
+hr.dotted-divider {
+    color: rgb(197, 197, 197);
+    border: 1px dotted;
+    height: 1px;
+}
+
+button.clickBtn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: 1px solid green;
+    width: 30%;
+    border-radius: 12px;
+    font-size: 20px;
+}
+
+#btn-div {
+    padding: 10px;
+
+}
