@@ -9,6 +9,10 @@ app.config.from_object(config)
 def home():
     return render_template("index_.html")
 
+@app.route("/log/")
+def log():
+    return redirect(url_for("home"))
+
 @app.route("/log/<is_login>/")
 def index(is_login):
     index_params = {
@@ -22,9 +26,13 @@ def index(is_login):
     class Person(object):
         name = "John Doe"
         age = 18
+        def keys(self):
+            return ('name', 'age')
+        def __getitem__(self, item):
+            return getattr(self, item)
     default_p = Person()
 
-    if is_login == 1:
+    if is_login == "1":
         class User_login(Person):
             name = u"陈士震"
             age = 22
@@ -33,10 +41,10 @@ def index(is_login):
             def __getitem__(self, item):
                 return getattr(self, item)
         user = User_login()
-        index_params["person"] = user
+        index_params["person"] = dict(user)
         return render_template("index.html", **index_params)
     else:
-        index_params["person"] = default_p
+        index_params["person"] = dict(default_p)
         return render_template("index.html", **index_params)
 
 @app.route("/articles/")
