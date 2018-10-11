@@ -5,8 +5,11 @@ import config
 app = Flask(__name__)
 app.config.from_object(config)
 
+@app.route("/")
+def home():
+    return render_template("index_.html")
 
-@app.route("/<is_login>/")
+@app.route("/log/<is_login>/")
 def index(is_login):
     index_params = {
         "note": "Student logs",
@@ -30,7 +33,6 @@ def index(is_login):
             def __getitem__(self, item):
                 return getattr(self, item)
         user = User_login()
-        print(dict(user))
         index_params["person"] = user
         return render_template("index.html", **index_params)
     else:

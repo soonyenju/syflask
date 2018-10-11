@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,22 +9,23 @@
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script> -->
 </head>
+
 <body>
     <h1>Das ist ein Starter</h1>
     <p>Hello, this is {{note}}</p>
     <hr>
     <p>身份：{{meta_info.identity}}</p>
     <p>国籍：{{meta_info["nantionality"]}}</p>
-    <hr>
-    {% if person %}
-        <a href="#">{{person.name}}</a>
-        <a href="#">{{person.age}}</a>
-        {% for key, val in person.__dict__.items()%}
-            <p>{{key}} : {{val}}</p>
-        {% endfor %}
-    {% else %}
-        <a href="#">LOGIN</a>
-        <a href="#">LOGOUT</a>
-    {% endif %}
+    <hr> {% if person %}
+    <a href="#">{{person.name}}</a>
+    <a href="#">{{person.age}}</a> {% for key, val in person.__dict__.items()%}
+    <p>{{key}} : {{val}}</p>
+    {% endfor %} {% else %}
+    <a href="#">LOGIN</a>
+    <a href="#">LOGOUT</a> {% endif %}
+    <hr> {% for i in [1, 2, 3]%}
+    <p>{{i}}</p>
+    {% endfor %}
 </body>
+
 </html>
