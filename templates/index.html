@@ -1,39 +1,198 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>介绍</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script> -->
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <!-- <script src="main.js"></script> -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../static/scripts/index.js"></script>
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+        .navbar {
+        position: relative;
+        min-height: 50px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+        border: 1px solid transparent;
+        }
+        img{
+        width:auto;
+        height:auto;
+        max-width:100%;
+        max-height:100%;
+        }
+        #radi{
+            transform: scale(0.8);
+            /* padding:10px 10px 10px 10px; */
+        }
+    </style>
 </head>
-
 <body>
-    <h1>Das ist ein Starter</h1>
-    <p>Hello, this is {{note}}</p>
-    <hr>
-    <p>身份：{{meta_info.identity}}</p>
-    <p>国籍：{{meta_info["nantionality"]}}</p>
-    <hr>
+    <div class="container-fluid row">
+                <div class="jumbotron text-center" style="margin-bottom:0">
+                    <h1>FunkyCodes</h1>
+                    <p>这是一个代码成果发布页面。</p>
+                    <p><a id = "learnmore" class="btn btn-primary btn-lg" role="button">
+                            了解更多</a>
+                    </p>
+                </div>
+    </div>
     <div>
-        {% if person %}
-        <a href="#">{{person.name}}</a>
-        <a href="#">{{person.age}}</a>
-        <div>
-            {% for key, val in person.items()%}
-            <p>{{key}} : {{val}}</p>
-            {% endfor %}
-            <div>
-                {% else %}
-                <a href="#">LOGIN</a>
-                <a href="#">LOGOUT</a>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">网站名</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">主页</a></li>
+                    <li><a href="codes">代码</a></li>
+                    <li><a href="articles">文章</a></li>
+                    <li><a href="test">测试</a></li>
+                    <li><a href="test2">测试2</a></li>
+                    <li><a href="https://github.com/soonyenju">我的github</a></li>
+                </ul>
             </div>
         </div>
-        {% endif %}
+    </nav>
     </div>
-    <hr>
-</body>
 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>关于中国航天</h2>
+                <h5>LOGO:</h5>
+                <div >
+                    <img src="../static/img/logo.jpg" alt="中国航天-CASA" />
+                </div>
+                <p> 中华人民共和国的航天事业起始于1956年。
+                    中国于1970年4月24日发射第一颗人造地球卫星(见“东方红”1号)，是继苏联、美国、法国、日本之后世界上第5个能独立发射人造卫星的国家。
+                中国发展航天事业的宗旨是：探索外太空，扩展对地球和宇宙的认识；
+                和平利用外太空，促进人类文明和社会进步，造福全人类；
+                满足经济建设、科技发展、国家安全和社会进步等方面的需求，提高全民科学素质，维护国家权益，增强综合国力。
+                中国发展航天事业贯彻国家科技事业发展的指导方针，即自主创新、重点跨越、支撑发展、引领未来。</p>
+                <h3>相关链接</h3>
+                <p>相关单位的链接</p>
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a href="http://www.chinasiwei.com/">中国四维测绘技术有限公司</a></li>
+                    <li><a href="http://www.cast.cn/">中国空间技术研究院</a></li>
+                    <li><a href="http://www.sast.spacechina.com/">上海航天技术研究院</a></li>
+                    <li><a href="http://www.radi.cas.cn/">中国科学院遥感与数字地球研究所</a></li>
+                </ul>
+                <hr class="hidden-sm hidden-md hidden-lg">
+            </div>
+            <div class="col-sm-8">
+                <h2>中国四维测绘技术有限公司</h2>
+                <h5>————又名中国资源卫星应用中心</h5>
+                <!-- <div class="fakeimg">图像</div> -->
+                <div>
+                    <div id="myCarousel" class="carousel slide">
+                        <!-- 轮播（Carousel）指标 -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                            <li data-target="#myCarousel" data-slide-to="4"></li>
+                        </ol>   
+                        <!-- 轮播（Carousel）项目 -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="../static/img/siwei1.png" alt="First slide">
+                                <div class="carousel-caption">标题 1</div>
+                            </div>
+                            <div class="item">
+                                <img src="../static/img/siwei2.jpg" alt="Second slide">
+                                <div class="carousel-caption">标题 2</div>
+                            </div>
+                            <div class="item">
+                                <img src="../static/img/siwei3.jpg" alt="Third slide">
+                                <div class="carousel-caption">标题 3</div>
+                            </div>
+                            <div class="item">
+                                <img src="../static/img/siwei4.jpeg" alt="Third slide">
+                                <div class="carousel-caption">标题 3</div>
+                            </div>
+                            <div class="item">
+                                <img src="../static/img/siwei5.jpg" alt="Third slide">
+                                <div class="carousel-caption">标题 3</div>
+                            </div>
+                        </div>
+                        <!-- 轮播（Carousel）导航 -->
+                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>      
+                </div>
+                <p>
+                    中国四维测绘技术有限公司(简称中国四维)由国家测绘局于1992年创建，是国内测绘行业及地理信息产业的领军企业。
+                    1998年底根据中央和国务院的部署，交由中央企业工委管理，成为中央企业。2003年划归国务院国有资产监督管理委员会管理。
+                </p>
+                <p>
+                    2003年底，经国务院国有资产监督管理委员会的批准，与中国卫星通信集团公司进行重组，成为中国卫星通信集团公司的全资子公司。
+                    2009年4月，随中国卫星通信集团公司（后更名为中国卫星通信集团有限公司）整体重组并入中国航天科技集团公司。
+                    2011年底，与中国卫星通信集团有限公司分立，成为中国航天科技集团专业子公司。
+                    中国四维长期致力于地理信息产业发展，具备甲级测绘资质，在业内拥有权威性与影响力。
+                    中国四维是我国地理信息产业的“国家队”和“排头兵”，主要从事卫星导航定位综合信息服务、导航电子地图及动态交通信息服务、航空摄影测量及数据处理、卫星影像等业务。
+                    目前，中国四维下属公司为四家，分别是中寰卫星导航通信有限公司、北京四维图新科技股份有限公司、四维航空遥感有限公司及四维世景科技（北京）有限公司。
+                    中国四维以地理信息新型服务业发展为指引，倾力建设领先的、稳固的、具有竞争能力的地理遥感影像、电子地图数据、导航定位监控和地理信息系统等基础业务平台，积极拓展功能实用、内容丰富、能够满足不同客户需求的综合应用服务业务，形成了市场主导、关联紧密、协同发展的“天地一体”业务体系。
+                    作为国家地理信息产业发展的领军者，中国四维努力开拓市场、精心打造品牌、提供优质服务，致力于打造我国地理信息产业旗舰企业，力争成为国际一流的综合地理信息服务提供商。
+                </p>
+                <br>
+                <h2>中国科学院</h2>
+                <h5>遥感与数字地球研究所</h5>
+                <!-- <div class="fakeimg">图像</div> -->
+                <div>
+                    <img id="radi" src="../static/img/radi.jpg" alt="遥感所" title="Radi" height="10%">
+                </div>
+                <p>
+                    中国科学院遥感与数字地球研究所，简称遥感地球所，在中国科学院遥感应用研究所、中国科学院对地观测与数字地球科学中心基础上组建，于2012年9月成立，为中国科学院直属综合性科研机构。
+                </p>
+                <p>
+                    遥感地球所的战略定位为研究遥感信息机理、对地观测与空间地球信息前沿理论，建设运行国家航天航空对地观测重大科技基础设施与天空地一体化技术体系，构建形成数字地球科学平台和全球环境与资源空间信息保障能力。
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <nav style="text-align: center">
+    <!-- <div class="container">
+        <div class="center-block"> -->
+            <ul class="pagination">
+                <li><a href="#">&laquo;</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+            </ul>
+        <!-- </div> -->
+    <!-- </div> -->
+    </nav>
+
+    <div class="jumbotron text-center" style="margin-bottom:0">
+        <p>简体中文版提供的内容仅用于培训和测试，不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。</p>
+    </div>
+</body>
 </html>

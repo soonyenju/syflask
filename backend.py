@@ -1,13 +1,39 @@
 # coding: utf-8
 from flask import (Flask, url_for, redirect, render_template)
-import config
+import config, os
 
 app = Flask(__name__)
 app.config.from_object(config)
 
 @app.route("/")
 def home():
-    return render_template("index_.html")
+    return render_template("index.html")
+
+
+@app.route("/articles/")
+def articles():
+    return render_template("articles.html")
+
+
+@app.route("/articles/poem/")
+def poem():
+    return render_template("poem.html")
+
+
+@app.route("/articles/item/<id>/")
+def items(id):
+    return redirect(url_for("articles"))
+    print(f"{id}")
+
+
+@app.route("/codes/")
+def codes():
+    return render_template("codes.html")
+
+
+@app.route("/test/")
+def test():
+    return render_template("index_test.html")
 
 @app.route("/log/")
 def log():
@@ -47,18 +73,10 @@ def index(is_login):
         index_params["person"] = dict(default_p)
         return render_template("index.html", **index_params)
 
-@app.route("/articles/")
-def articles():
-    return render_template("articles.html")
 
-@app.route("/articles/item/<id>/")
-def items(id):
-    return redirect(url_for("articles"))
-    print(f"{id}")
-
-@app.route("/deutsch/")
-def deutsch():
-    return url_for("index")
+@app.route("/test2/")
+def test2():
+    return url_for("home")
 
 if __name__ == '__main__':
     app.run(host = "127.0.0.1", port = 3000)
