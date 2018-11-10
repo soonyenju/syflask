@@ -17,12 +17,47 @@
                 name: 'Ryu',
                 age: 30
             }
+            handleClick = (e) => {
+                console.log(e.target)
+                console.log(this.state)
+                this.setState({
+                    name: "Yoshi",
+                    age: 25
+                });
+            }
+            handleMouseOver = (e) => {
+                console.log(e)
+                console.log(e.target, e.pageX)
+            }
+            handleCopy = (e) => {
+                console.log("Try bein original once!")
+            }
+            handleChange = (e) =>{
+                this.setState({
+                    name: e.target.value
+                })
+            }
+            handleSubmit = (e) => {
+                e.preventDefault();
+                console.log("form submitted", this.state.name)
+            }
             render() {
                 return (
                     <div className="app-content">
-                        <h1>主页</h1>
-                        <p>{Math.random() * 10}</p>
-                        <p>My name is: {this.state.name} and I am {this.state.age}</p>
+                        <h1>My name is {this.state.name}</h1>
+                        {
+                            //<p>{Math.random() * 10}</p>
+                        }
+                        {
+                            //<p>My name is: {this.state.name} and I am {this.state.age}</p>
+                        }
+                        <form onSubmit={this.handleSubmit}>
+                            <input type="text" onChange={this.handleChange}/>
+                            <button>Submit</button>
+                        </form>
+                        <button onClick={this.handleClick}>Click Me</button>
+                        <button onMouseOver={this.handleMouseOver}>Hover me</button>
+                        <p onCopy={this.handleCopy}>What we think, we become</p>
                     </div>
                 )
             }
