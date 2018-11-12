@@ -9,9 +9,9 @@ class Ninjas extends Component{
                 {/* <div>Name: {this.props.name}</div> */}
                 <div>Name: {name}</div>
                 {/* <div>Age: {this.props.age}</div> */}
-                <div>Name: {age}</div>
+                <div>Age: {age}</div>
                 {/* <div>Belt: {this.props.belt}</div> */}
-                <div>Name: {belt}</div>
+                <div>Belt: {belt}</div>
             </div>
         )
     }
